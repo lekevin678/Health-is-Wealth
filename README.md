@@ -4,3 +4,5 @@ Health is Wealth, a personal project of mine, provides users the ability to easi
 To Run:
 1.) npm install
 2.) node main.js (any port #)
+
+https://user-images.githubusercontent.com/43553691/95037341-882a0300-067f-11eb-985f-2965861fcbd1.png
