@@ -1,0 +1,178 @@
+<html>
+    <link rel="stylesheet" href="/advsearch.css" media="screen"> 
+
+    <h1 class="main-title"> Advanced Search </h1>
+
+    <div id= "advSearchSection">
+        <div class="query">
+            <input type="text" id="query_search" placeholder="Query Search..."> 
+        </div>
+        <div class= "adv cuisines">
+            <h1 onclick="dropMenu('cuisines')" class="title"> Cuisine Types <img class="downImage" src="/images/down.png"> </h1> 
+            <div class="dropDown" >
+                <ul class="cuisinesList list" >
+                    <li> African </li>
+                    <li> American </li>
+                    <li> British </li>
+                    <li> Cajun </li>
+                    <li> Caribbean </li>
+                    <li> Chinese </li>
+                    <li> Eastern European </li>
+                    <li> European </li>
+                    <li> French </li>
+                    <li> German </li>
+                    <li> Greek </li>
+                    <li> Indian </li>
+                    <li> Irish </li>
+                    <li> Italian </li>
+                    <li> Japanese </li>
+                    <li> Jewish </li>
+                    <li> Korean </li>
+                    <li> Latin American </li>
+                    <li> Mediterranean </li>
+                    <li> Mexican </li>
+                    <li> Middle Eastern </li>
+                    <li> Nordic </li>
+                    <li> Southern </li>
+                    <li> Spanish </li>
+                    <li> Thai </li>
+                    <li> Vietnamese </li>
+                </ul>
+
+            </div> 
+        </div>
+
+        <div class= "adv includeIngr">
+            <h1 onclick="dropMenu('includeIngr')" class="title"> Include Ingredients <img class="downImage" src="/images/down.png"> </h1> 
+            <div class="dropDown">
+                <form onsubmit="return ingredients('include')">
+                    <input id="includeInput" class="ingrInput" type="text" name="includeIngr" placeholder="example: Broccoli"> <button id="includeButton" type="submit"> add </button>
+                </form>
+                <ul class="includeList ingr list"> </ul>
+            </div>    
+        </div>
+        <div class= "adv excludeIngr">
+            <h1 onclick="dropMenu('excludeIngr')" class="title"> Exclude Ingredients <img class="downImage" src="/images/down.png"> </h1> 
+            <div class="dropDown">
+                <form onsubmit="return ingredients('exclude')">
+                    <input id="excludeInput" class="ingrInput" type="text" name="excludeIngr" placeholder="example: Beef"> <button id="excludeButton" type="submit"> add </button>
+                    <ul class="excludeList ingr list"> </ul>
+                </form>
+            </div>    
+        </div>
+
+        <div class= "adv diet">
+            <h1 onclick="dropMenu('diet')" class="title"> Diets <img class="downImage" src="/images/down.png"> </h1> 
+            <div class="dropDown">
+                <ul class="dietList list">
+                    <li> Vegan </li>
+                    <li> Vegatarian </li>
+                    <li> Dairy-Free </li>
+                    <li> Gluten-Free </li>
+                </ul>
+            </div>    
+        </div>
+
+        <div class= "adv min_max">
+            <h1 onclick="dropMenu('min_max')"  class="title"> Min/Max (Carbohydrate/Protein/Calories/Fat/Sugar) <img class="downImage" src="/images/down.png"> </h1> 
+            <div class="dropDown MinMaxContainer">
+                <div class="itemMinMax">
+                    <h1> Carbohydrates </h1> 
+                    <div class="MinMaxInput">
+                        <div class="mmr"> 
+                            <p> Minimum </p> 
+                            <input type="number" id="min_Carbs"> 
+                            <b> g </b>
+                        </div>
+
+                        <div class="mmr"> 
+                            <p> Maximum </p> 
+                            <input type="number" id="max_Carbs"> 
+                            g  
+                        </div>
+                    </div>
+                </div>
+
+                <div class="itemMinMax">
+                    <h1> Protein </h1> 
+                    <div class="MinMaxInput">
+                        <div class="mmr"> 
+                            <p> Minimum </p> 
+                            <input type="number" id="min_Protein">
+                            <b> g </b>
+                        </div>
+
+                        <div class="mmr"> 
+                            <p> Maximum </p> 
+                            <input type="number" id="max_Protein">
+                            g  
+                        </div>
+                    </div>
+                </div>
+
+                <div class="itemMinMax">
+                    <h1> Calories </h1> 
+                    <div class="MinMaxInput">
+                        <div class="mmr"> 
+                            <p> Minimum </p> 
+                            <input type="number" id="min_Cal">
+                            <b> g </b>
+                        </div>
+
+                        <div class="mmr"> 
+                            <p> Maximum </p> 
+                            <input type="number" id="max_Cal">
+                            g  
+                        </div>
+                    </div>
+                </div>
+
+                <div class="itemMinMax">
+                    <h1> Fat </h1> 
+                    <div class="MinMaxInput">
+                        <div class="mmr"> 
+                            <p> Minimum </p> 
+                            <input type="number" id="min_Fat">
+                            <b> g </b>
+                        </div>
+
+                        <div class="mmr"> 
+                            <p> Maximum </p> 
+                            <input type="number" id="max_Fat">
+                            g  
+                        </div>
+                    </div>
+                </div>
+
+                <div class="itemMinMax">
+                    <h1> Sugar </h1> 
+                    <div class="MinMaxInput">
+                        <div class="mmr"> 
+                            <p> Minimum </p> 
+                            <input type="number" id="min_Sugar">
+                            <b> g </b>
+                        </div>
+
+                        <div class="mmr"> 
+                            <p> Maximum </p> 
+                            <input type="number" id="max_Sugar">
+                            g  
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+
+        <div class= "submit">
+            <button id="submitButton" type="button" onclick="advSubmit()"> SUBMIT </button>
+        </div>
+
+    </div>
+
+
+    <section id="searchResults"> 
+        <div class="loading-container">
+            <object  id="loading" data="/images/loading.svg" type="image/svg+xml" style="z-index: 2; display: none;"></object>
+        </div>
+    </section>
+</html>

@@ -1,0 +1,268 @@
+<html>
+<script src="/static/healthgrade.js"charset="utf-8" defer></script>
+<script src="/static/procon.js"charset="utf-8" defer></script>
+
+<script src='/static/ingrCheck.js' charset="utf-8" defer></script>
+
+<link rel="stylesheet" href="/recipe.css" media="screen"> 
+       
+
+        <section class="recipe recipe-main-section">
+
+                 <div class="main-header">
+                    <h1 class="recipe-title"> <a href="{{sourceUrl}}"> {{title}} </a> </h1>
+                 </div>
+
+               <div class= "info"> 
+                    <section class="info-left">
+                        <div class="image-container">    <img src="{{image}}"> </div>
+                        
+                        <div class="recipe-quick-container">
+                            <table class="quick-info-table">
+                                    <tr>
+                                        <th> Servings: </th>
+                                        <td> {{servings}} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Ready In:  </th>
+                                        <td> {{readyInMinutes}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> URL: </th>
+                                        <td> <a href="{{sourceUrl}}"> {{title}} </a> </td>
+                                    </tr>
+                            </table>
+                        </div>
+
+                    </section>
+
+                    <section class="info-right">
+                             <div class="grade-container">
+                                <h2 class="text"> Health Grade </h2> 
+                                <div class="container chart" data-size="150" data-value={{healthScore}} data-arrow="d">  </div>
+                            </div>
+                            
+                            <div class="nutrition-container">   
+                                <div id="nutritionlabel">
+                                    <table  cellspacing="0" cellpadding="0">
+                                        <tbody>
+                                            <tr>
+                                                <td align="center" class="nutrition-header">Nutrition Facts</td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="serving">Per Serving Size</div></td>
+                                            </tr>
+                                            <tr style="height: 7px">
+                                                <td bgcolor="#000000"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="line">
+                                                        <div class="label">Calories 
+                                                            <div class="weight">{{calories.amount}}</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="line">
+                                                        <div class="dvlabel">% Daily Value<sup>*</sup></div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="line">
+                                                    <div class="label">Total Fat 
+                                                        <div class="weight">{{fat.amount}} {{fat.unit}}</div>
+                                                    </div>
+                                                    <div class="dv">{{fat.dv}}%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="indent">
+                                                    <div class="line">
+                                                    <div class="labellight">Saturated Fat 
+                                                        <div class="weight">{{sat_fat.amount}} {{sat_fat.unit}}</div>
+                                                    </div>
+                                                    <div class="dv">{{sat_fat.dv}}%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="line">
+                                                    <div class="label">Cholesterol 
+                                                        <div class="weight">{{cholesterol.amount}} {{cholesterol.unit}}</div>
+                                                    </div>
+                                                    <div class="dv">{{cholesterol.dv}}%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="line">
+                                                    <div class="label">Sodium 
+                                                        <div class="weight">{{sodium.amount}} {{sodium.unit}}</div>
+                                                    </div>
+                                                    <div class="dv">{{sodium.dv}}%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="line">
+                                                    <div class="label">Total Carbohydrates 
+                                                        <div class="weight">{{carbohydrates.amount}}{{carbohydrates.unit}}</div>
+                                                    </div>
+                                                    <div class="dv">{{carbohydrates.dv}}%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="indent">
+                                                    <div class="line">
+                                                        <div class="labellight">Fiber 
+                                                            <div class="weight">{{fiber.amount}}{{fiber.unit}}</div>
+                                                        </div>
+                                                        <div class="dv">{{fiber.dv}}%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="indent">
+                                                    <div class="line">
+                                                        <div class="labellight">Sugars 
+                                                            <div class="weight">{{sugar.amount}}{{sugar.unit}}</div>
+                                                        </div>
+                                                        <div class="dv">{{sugar.dv}}%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                                        <tr>
+                                                <td>
+                                                    <div class="line">
+                                                    <div class="label">Protein 
+                                                        <div class="weight">{{protein.amount}}{{protein.unit}}</div>
+                                                    </div>
+                                                    <div class="dv">{{protein.dv}}%</div>
+                                                </div></td>
+                                            </tr>
+                                            <tr style="height: 7px">
+                                                <td bgcolor="#000000"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="line">
+                                                        <div class="labellight">* Based on a regular <a >2000 calorie diet</a>
+                                                        <br><br>
+                                                        <i>Nutritional details are an estimate and should only be used as a guide for approximation.</i>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="line">
+                                                        <div class="labellight">Calories per gram: 
+                                                        <br><br>
+                                                        <i>Fat 9
+                                                            &bull;
+                                                            Carbohydrate 4
+                                                            &bull;
+                                                            Protein 4
+                                                        </i>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                                <table class="nutrition-table">
+                                    <tr>
+                                        <th> Calories </th>
+                                        <td> {{calories.amount}} cals </td>
+                                        <td> {{calories.dv}} % DV </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Fat </th>
+                                        <td> {{fat.amount}} g</td>
+                                        <td> {{fat.dv}} % DV </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Carbs </th>
+                                        <td> {{carbohydrates.amount}} g</td>
+                                        <td> {{carbohydrates.dv}} % DV </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Sugar </th>
+                                        <td> {{sugar.amount}} g</td>
+                                        <td> {{sugar.dv}} % DV </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Protein </th>
+                                        <td> {{protein.amount}} g</td>
+                                        <td> {{protein.dv}} % DV </td>
+                                    </tr>
+                                </table>
+                            </div>
+                                
+                            <div class="pros-cons-container"> 
+                               <ul class="pro-con-list">
+                                    <li class="gluten pro-con-item"> 
+                                        <p>Vegan</p>
+                                    </li>
+                                    <li class="vegan pro-con-item"> 
+                                        <p>Vegatarian</p>
+                                    </li>
+                                    <li class="veg pro-con-item"> 
+                                        <p>Dairy-Free</p>
+                                    </li>
+                                    <li class="dairy pro-con-item"> 
+                                        <p>Gluten-Free</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        
+                        
+                    </section>
+                </div>
+            </section>
+
+            <section class="recipe-ingredients-section">
+                <div class="recipe-ingredients-container">
+                    <h1 class="ingredients-header"> Ingredients Checklist </h1>
+                    <table class="ingredients-table">
+                        {{#each extendedIngredients}}
+                        <tr>
+                            <th> <input type="checkbox" class="ingrCheck" onclick="removeIngr( {{price}} , this)"> <h1 class="ingrTitle"> {{name}} </h1> </th>
+                            <td> {{amount}} <span> {{unit}} </span> </td>
+                            <td> ${{price}} </td>
+                        </tr>
+                        {{/each}}
+                         <tr>
+                            <th> </th>
+                            <td style="font-weight: 600; font-size: 36px"> Total Estimated Price   </td>
+                            <td style="font-weight: 600;">  $<span id="total-price">{{totalPrice}}</span></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+
+     
+
+
+
+
+            <script type="text/javascript"> 
+                window.onload = proConList( [{{vegan}}, {{vegetarian}}, {{dairyFree}}, {{glutenFree}}] );
+            </script>
+</html>

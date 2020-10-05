@@ -1,0 +1,151 @@
+.hidden {
+    display: none;
+}
+
+.wrapper {
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;;
+}
+.container {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.result-container{
+    background-image: url("images/main.png");
+    min-width: 1000px;
+    background-repeat: repeat;
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.results-info{
+    min-width: 900px;
+    box-sizing: border-box;
+    padding: 15px;
+    position: relative;
+    background-color: white;
+    border-top: 3px solid #35853d;
+}
+.results-info * {
+    display: inline-block;
+    color: #35853d;
+}
+
+.results-info .search{
+    color: #35853d;
+
+    min-width: 850px;
+    width: 75%;
+    font-weight: 700;
+    font-size: 56px;
+    font-style: italic;
+}
+
+.results-info .term{
+    margin: 0;
+    font-weight: 400;
+    font-size: 22px;
+    font-style: italic;
+}
+
+.results-info .total{
+    min-width: 380px;
+    width: 15%;
+    position: absolute;
+    float: right;
+
+    bottom: 5%;
+    right: 1%;
+    padding-left: auto; 
+    font-style: italic;
+
+    font-size: 23px;
+    text-align: right;
+}
+
+.total-result{
+    font-size: 18px;
+    font-style: normal;
+    right: 0;
+    margin: 0;
+}
+
+
+
+.result-table{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    position: relative;
+}
+
+.result-row{
+    box-sizing: border-box;
+    min-width: 900px;
+    width: 80%;
+    min-height: 150px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    background-color: white;
+    margin: auto;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 6px #5e636b;    
+}
+
+.result-row:hover{
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+.image-container{
+    box-sizing: border-box;
+    min-width: 300px;
+    width: 300px;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    
+}
+
+.recipe-title{
+    font-weight: 700;
+    font-size: 3vw;
+    color: black;
+}
+
+.title-container{
+    margin-left: 20px;
+    text-align: center;
+}
+
+.grade-container{
+    order: 2;
+}
+
+.page{
+    color: black;
+}
+
+.pages-list{
+    float: right;
+}
+.pages-list *{
+    display: inline;
+    color: #35853d;
+    border: none;
+    background-color: white;
+    font-weight: 700;
+    font-size: 20px;
+}

@@ -1,0 +1,172 @@
+*{
+    font-family: "helvetica";
+}
+
+a {
+    text-decoration: none;
+    color: #35853d;
+}
+h1 {
+    margin:0;
+}
+ul {
+    list-style-type: none;
+}
+
+.main-title{
+    color: #35853d;
+
+    margin-right: 20px;
+    margin-left: 20px;
+
+    min-width: 700px;
+
+    font-weight: 700;
+    font-size: 56px;
+    font-stretch: expanded;
+    /*font-style: italic;*/
+    border-top: 3px solid #35853d;
+}
+
+body {
+    top: 0;
+    margin:0;
+    display: block;
+    transition: 0.3s all;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 8rem; 
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4rem;  
+    text-align: center;
+
+}
+
+.footer li {
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #35853d;
+    font-weight: 900;
+}
+
+html, body {
+  height: 100%;
+}
+
+.top-search{
+    position: relative;
+    height: 70%;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.top-bar{
+    box-sizing: border-box;
+    top: 0;
+    width: 100%;
+    padding-bottom: 20px;
+    min-width: 900px;
+}
+
+.logo-container{
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin: auto;
+}
+
+.logo{
+    background-image: url('/images/logo-main.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.logo:hover{
+    cursor: pointer;
+}
+
+.nav-list{
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+    text-align: center;
+    white-space: nowrap;
+    margin-top: 10px;
+}
+
+.nav-list li {
+    display: inline-block;
+}
+
+.nav-item{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.nav-item > a {
+    font-weight: 200;
+    font-size: 15px;
+    color: black;
+    font-family: "Helvetica";
+}
+
+.nav-item:hover > a {
+    opacity: 60%;
+    text-decoration: underline;
+}
+
+
+/*body::-webkit-scrollbar {
+background: transparent; 
+  width: 12px;               
+}
+body::-webkit-scrollbar-track {
+  background: transparent;        
+}
+body::-webkit-scrollbar-thumb {
+    background: transparent; 
+  background-color: green;          
+  border: 3px solid white;  
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+

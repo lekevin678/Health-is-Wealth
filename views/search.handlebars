@@ -1,0 +1,38 @@
+<html>
+    <link rel="stylesheet" href="/search.css" media="screen"> 
+    <script src="/static/healthgrade.js"charset="utf-8" defer></script>
+    <script src="/static/search.js" charset="utf-8" defer> </script>
+
+    <div class="result-container">
+        <div class="results-info">
+            <h1 class="search"> Search Results  <p class="term"> [   "{{term}}"   ] </p> </h1> 
+            <h1 class="total"> Total Results: <p class="total-result"> {{totalResults}} </p> </h1>
+        </div>
+
+        <section class="result-table">
+            {{#each results}}
+                    <div class="result-row" onclick="location.href='/recipe/{{id}}';"> 
+                        <div class="image-container" style="background-image: url({{image}});" > 
+                        </div>
+                        <div class="title-container">
+                            <a href="/recipe/{{id}}" class="recipe-title"> {{title}} </a>
+                        </div>
+
+                        <div class="grade-container">
+                            <div class="container chart" data-size="150" data-value={{healthGrade}} data-arrow="d">  </div>
+                        </div>
+                    </div>
+            {{/each}}
+        </section>
+
+
+        <ul class="pages-list">
+            <li> <a class="page" href="/search?searchInput={{term}}&page={{pages.prevPage}}"> <button> Previous Page </button> </a> </li>
+            <li class="page"> {{pages.page}} / {{pages.totalPages}}  </li>
+            <li> <a class="page" href="/search?searchInput={{term}}&page={{pages.nextPage}}"> <button> Next Page </button> </a> </li>
+        </ul>
+
+    </div>
+
+    
+</html>

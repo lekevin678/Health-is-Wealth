@@ -1,0 +1,20 @@
+#content{
+    padding-right: 50px;
+    padding-left: 50px;
+    margin-top: 50px;
+}
+
+
+p{
+    font-size: 18px;
+    line-height: 2;
+}
+
+.row{
+    padding-bottom: 20px;
+}
+
+.motto{
+    font-weight: 700;
+    font-size: 48px;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+    <head>
+        <link rel="stylesheet" href="/style.css" media="screen">
+        <link rel="icon" href="/images/logo-main.png"> 
+        <meta charset="utf-8" />
+
+        <title> {{title}} </title>
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script>
+            $(function() {
+                $('a[href*=\\#]:not([href=\\#])').on('click', function() {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                });
+            });
+
+            function GoToHomePage(){
+                window.location = '/';   
+            }
+        </script>  
+
+        <script src="/static/adv.js"charset="utf-8" defer></script>
+        {{#each jsscripts}}
+        <script src="/static/{{this}}"></script>
+        {{/each}}
+        
+
+    </head>
+
+    <body>
+        <div id="page-container">
+            
+            <div id="content-wrap">
+                <header class="top-bar">
+                   <div class="logo-container" onclick="GoToHomePage()"> <div class="logo"> </div> </div>
+
+                    <ul class="nav-list">
+                        <li class="nav-item"> <a href="/advancedsearch"> Advanced Search </a> </li>
+                        <li class="nav-item"> <a href="/about"> About </a> </li>
+                        <li class="navitem navbar-search">
+                            <form id="searching" action="/search" method="GET">
+                                <input type="text" name="searchInput" id="navbar-search-input" placeholder="Recipe Search...">
+                                <button> Search </button>
+                            </form>
+                        </li>
+                    </ul>
+                </header>
+            
+        
+                {{{body}}}
+
+            </div>
+
+            
+
+            <footer class="footer">
+                <li class="footer-item"> <a href="/"> lekevin678@gmail.com </a> </li>
+                <li class="footer-item"> <a href="https://github.com/lekevin678" target="_blank"> GitHub </a> </li>
+                <li class="footer-item"> <a href="https://www.linkedin.com/in/kevin-le-18483a175/" target="_blank"> LinkedIn</a> </li>
+            </footer>
+
+        </div>
+
+    </body>
+
+</html>

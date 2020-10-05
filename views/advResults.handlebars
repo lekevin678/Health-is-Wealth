@@ -1,0 +1,40 @@
+<html>
+<script src="/static/healthgrade.js"charset="utf-8" defer></script>
+<link rel="stylesheet" href="/search.css" media="screen"> 
+    
+    <div class="loading-container">
+            <object  id="loading" data="/images/loading.svg" type="image/svg+xml" style="z-index: 2; display: none;"></object>
+        </div>
+
+    <div class="result-container">
+        <div class="results-info">
+            <h1 class="search"> Search Results</h1> 
+            <h1 class="total"> Total Results: {{totalResults}}</h1>
+        </div>
+        <section class="result-table">
+            {{#each results}}
+                    <div class="result-row" onclick="location.href='/recipe/{{id}}';"> 
+                        <div class="image-container" style="background-image: url({{image}});" > 
+                        </div>
+                        <div class="title-container">
+                            <a href="/recipe/{{id}}" class="recipe-title"> {{title}} </a>
+                        </div>
+
+                        <div class="grade-container">
+                            <div class="container chart" data-size="150" data-value={{healthGrade}} data-arrow="d">  </div>
+                        </div>
+                    </div>
+            {{/each}}
+        </section>
+
+        <ul class="pages-list">
+            <li> <button class="pageButton" onclick="getPage({{pages.prevPage}} , 'prev')"> Previous Page </button> </li>
+            <li> {{pages.page}} / {{pages.totalPages}}  </li>
+            <li> <button class="pageButton" onclick="getPage({{pages.nextPage}} , 'next')"> Next Page </button> </li>
+        </ul>
+    </div>
+
+    
+
+
+</html>
